@@ -46,11 +46,11 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.98);
+    background: rgba(26, 26, 26, 0.98);
     backdrop-filter: blur(10px);
     z-index: 1000;
     padding: 1rem 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 nav .container {
@@ -91,43 +91,44 @@ nav a:hover {
 /* Hero Section */
 .hero {
     min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #e5e5e5 0%, #f5f5f5 50%, #e5e5e5 100%);
+    justify-content: center;
+    background: #1a1a1a;
     position: relative;
     overflow: hidden;
-    padding: 0;
+    padding: 0 2rem;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
 }
 
 .hero-left {
-    background: #e5e5e5;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
+    flex: 1;
+    min-width: 400px;
 }
 
 .hero-right {
-    background: #000000;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+    flex: 0 0 400px;
 }
 
 .hero-image {
-    width: 100%;
-    max-width: 500px;
-    aspect-ratio: 3/4;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
     background: linear-gradient(135deg, var(--primary), var(--accent));
-    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    box-shadow: 0 20px 60px rgba(99, 102, 241, 0.3);
 }
 
 .hero-image img {
@@ -172,27 +173,26 @@ nav a:hover {
 .hero-content {
     text-align: left;
     z-index: 1;
-    max-width: 600px;
 }
 
 .hero-content h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
-    color: #000000;
+    color: #ffffff;
     animation: fadeInUp 1s ease-out;
 }
 
 .hero-content .subtitle {
-    font-size: 1.5rem;
-    color: #666666;
+    font-size: 1.3rem;
+    color: #b0b0b0;
     margin-bottom: 0.5rem;
     animation: fadeInUp 1s ease-out 0.2s both;
 }
 
 .hero-location {
-    font-size: 1.1rem;
-    color: #999999;
-    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #888888;
+    margin-bottom: 2rem;
     animation: fadeInUp 1s ease-out 0.3s both;
 }
 
@@ -200,6 +200,7 @@ nav a:hover {
     font-size: 1.2rem;
     color: var(--primary);
     min-height: 40px;
+    margin-bottom: 2rem;
     animation: fadeInUp 1s ease-out 0.4s both;
 }
 
@@ -669,16 +670,23 @@ footer p {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .hero {
-        grid-template-columns: 1fr;
-        min-height: auto;
+    .hero-container {
+        flex-direction: column-reverse;
+        gap: 3rem;
     }
     
-    .hero-left,
+    .hero-left {
+        min-width: 100%;
+        text-align: center;
+    }
+    
     .hero-right {
-        height: auto;
-        min-height: 50vh;
-        padding: 3rem 2rem;
+        flex: 0 0 300px;
+    }
+    
+    .hero-image {
+        width: 300px;
+        height: 300px;
     }
     
     .hero-content h1 {
@@ -687,6 +695,10 @@ footer p {
     
     .hero-content .subtitle {
         font-size: 1.2rem;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
     }
     
     .about-content {
@@ -752,22 +764,24 @@ footer p {
 
 <!-- Hero Section -->
 <section class="hero" id="home">
-<div class="hero-left">
-    <div class="hero-content">
-        <h1>Hi, I am<br>Harini Vasisht</h1>
-        <p class="subtitle">Data Analytics Engineering Graduate Student</p>
-        <p class="hero-location">📍 Boston, MA</p>
-        <div class="typing-text" id="typing"></div>
-        <div class="hero-buttons">
-            <a href="#projects" class="btn btn-primary">View My Work</a>
-            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+<div class="hero-container">
+    <div class="hero-left">
+        <div class="hero-content">
+            <h1>Harini Vasisht</h1>
+            <p class="subtitle">Data Analytics Engineering Graduate Student</p>
+            <p class="hero-location">📍 Boston, MA</p>
+            <div class="typing-text" id="typing"></div>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
         </div>
     </div>
-</div>
-<div class="hero-right">
-    <div class="hero-image">
-        <img src="./profile.png" alt="Harini Vasisht" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-        <div class="hero-image-placeholder" style="display: none;">👩‍💻</div>
+    <div class="hero-right">
+        <div class="hero-image">
+            <img src="./profile.png" alt="Harini Vasisht" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="hero-image-placeholder" style="display: none;">👩‍💻</div>
+        </div>
     </div>
 </div>
 </section>
