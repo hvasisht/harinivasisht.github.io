@@ -185,8 +185,15 @@ nav a:hover {
 .hero-content .subtitle {
     font-size: 1.5rem;
     color: #666666;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.hero-location {
+    font-size: 1.1rem;
+    color: #999999;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease-out 0.3s both;
 }
 
 .typing-text {
@@ -276,33 +283,8 @@ section h2::after {
 
 /* About Section */
 .about-content {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 3rem;
-    align-items: start;
-}
-
-.about-image {
-    width: 100%;
-    aspect-ratio: 1;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    position: relative;
-}
-
-.about-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.about-image-placeholder {
-    font-size: 5rem;
-    color: white;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .about-text h3 {
@@ -708,7 +690,7 @@ footer p {
     }
     
     .about-content {
-        grid-template-columns: 1fr;
+        max-width: 100%;
     }
     
     .about-stats {
@@ -774,6 +756,7 @@ footer p {
     <div class="hero-content">
         <h1>Hi, I am<br>Harini Vasisht</h1>
         <p class="subtitle">Data Analytics Engineering Graduate Student</p>
+        <p class="hero-location">📍 Boston, MA</p>
         <div class="typing-text" id="typing"></div>
         <div class="hero-buttons">
             <a href="#projects" class="btn btn-primary">View My Work</a>
@@ -794,11 +777,6 @@ footer p {
 <section id="about" class="fade-in">
 <h2>About Me</h2>
 <div class="about-content">
-    <div class="about-image">
-        <!-- Replace the src with your actual photo URL -->
-        <img src="your-photo-url.jpg" alt="Harini Vasisht" onerror="this.style.display='none'; this.parentElement.querySelector('.about-image-placeholder').style.display='flex'">
-        <div class="about-image-placeholder" style="display: none;">👩‍💻</div>
-    </div>
     <div class="about-text">
         <h3>Passionate About Turning Data Into Insights</h3>
         <p>I'm a Data Analytics Engineering graduate student at Northeastern University with a strong foundation in machine learning, deep learning, and data analytics. My experience spans from building production-ready ML systems to creating insightful dashboards that drive business decisions.</p>
