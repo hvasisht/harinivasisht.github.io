@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harini Vasisht - Data Analytics Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #764ba2;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        /* Section */
+        section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        section h2 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            align-items: start;
+        }
+        
+        .profile-info {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .profile-info h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        
+        .profile-info p {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .skill-category {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+        }
+        
+        .skill-category li {
+            padding: 0.3rem 0;
+            color: #555;
+        }
+        
+        .skill-category li:before {
+            content: "▹ ";
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        
+        .project-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+        }
+        
+        .project-card h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-status {
+            display: inline-block;
+            padding: 0.2rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+        
+        .status-completed {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status-current {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .status-award {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .tech-tag {
+            background: #e7f0ff;
+            color: #667eea;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+        
+        /* Experience */
+        .experience-item {
+            border-left: 3px solid #667eea;
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .experience-item h3 {
+            color: #667eea;
+            margin-bottom: 0.3rem;
+        }
+        
+        .experience-item .company {
+            color: #555;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+        
+        .experience-item .date {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .experience-item ul {
+            margin-left: 1rem;
+        }
+        
+        .experience-item li {
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+        
+        /* Education */
+        .education-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid #667eea;
+        }
+        
+        .education-item h3 {
+            color: #667eea;
+            margin-bottom: 0.3rem;
+        }
+        
+        .education-item .school {
+            color: #555;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+        
+        .education-item .date {
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        /* Contact */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .contact-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .contact-card h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-card a {
+            color: #555;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-card a:hover {
+            color: #667eea;
+        }
+        
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Harini Vasisht</h1>
+        <p>Data Analytics Engineering Graduate Student | Aspiring Data Scientist & ML Engineer</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="profile-info">
+                    <h3>Quick Info</h3>
+                    <p><strong>Location:</strong> Boston, MA</p>
+                    <p><strong>Education:</strong> MS Data Analytics Engineering</p>
+                    <p><strong>University:</strong> Northeastern University</p>
+                    <p><strong>Expected Graduation:</strong> December 2026</p>
+                    <p><strong>Seeking:</strong> Spring 2026 Co-op</p>
+                </div>
+                <div>
+                    <p>I'm a passionate Data Analytics Engineering graduate student at Northeastern University with a strong foundation in machine learning, deep learning, and data analytics. My experience spans from building production-ready ML systems to creating insightful dashboards that drive business decisions.</p>
+                    
+                    <p>With professional experience as a Data Analyst at Phoenix Compliance, I've successfully delivered automated dashboards, optimized workflows, and collaborated with cross-functional teams across different time zones. I'm actively seeking Spring 2026 co-op opportunities in data analytics, data science, and machine learning roles.</p>
+                    
+                    <p>I'm particularly interested in roles where I can apply my skills in Python, SQL, machine learning frameworks, and cloud technologies to solve real-world business problems and deliver measurable impact.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>SQL</li>
+                        <li>R</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Machine Learning & AI</h3>
+                    <ul>
+                        <li>PyTorch</li>
+                        <li>TensorFlow</li>
+                        <li>Scikit-learn</li>
+                        <li>LangChain</li>
+                        <li>Hugging Face</li>
+                        <li>OpenCV</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Deep Learning</h3>
+                    <ul>
+                        <li>CNNs (ResNet, VGG)</li>
+                        <li>YOLOv8</li>
+                        <li>Transformers</li>
+                        <li>CLIP</li>
+                        <li>Stable Diffusion</li>
+                        <li>RAG Systems</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Data Visualization</h3>
+                    <ul>
+                        <li>Tableau</li>
+                        <li>Power BI</li>
+                        <li>Matplotlib</li>
+                        <li>Seaborn</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Cloud & Databases</h3>
+                    <ul>
+                        <li>AWS (S3, Glue, Athena)</li>
+                        <li>MySQL</li>
+                        <li>MongoDB</li>
+                        <li>PostgreSQL</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Tools & Frameworks</h3>
+                    <ul>
+                        <li>Git/GitHub</li>
+                        <li>Flask</li>
+                        <li>Jupyter</li>
+                        <li>Pandas/NumPy</li>
+                        <li>UiPath (RPA)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <h3>Text-to-Image Generation System</h3>
+                    <span class="project-status status-current">Current</span>
+                    <p>Building a text-to-image generation pipeline using CLIP and Stable Diffusion v1.5 with the COCO 2017 dataset. Achieved 83.24% CLIP similarity score in Milestone 1.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">CLIP</span>
+                        <span class="tech-tag">Stable Diffusion</span>
+                        <span class="tech-tag">Transformers</span>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <h3>CNN-Based Celebrity Detection</h3>
+                    <span class="project-status status-completed">Completed</span>
+                    <p>Developed automated attendance system using ResNet-18/50 and YOLOv8 achieving 91% classification accuracy on 202,599 CelebA images. Deployed Flask web application with custom NMS algorithms.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">YOLOv8</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">OpenCV</span>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <h3>RebalanceAI</h3>
+                    <span class="project-status status-award">Award-Winning</span>
+                    <p>Built hybrid stock analysis system integrating financial data with sentiment analysis using LangChain and GPT-4. Combined yfinance, Alpha Vantage, NewsAPI, and Reddit data.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">LangChain</span>
+                        <span class="tech-tag">GPT-4</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">APIs</span>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <h3>BikeDemandML</h3>
+                    <span class="project-status status-completed">Completed</span>
+                    <p>Predictive modeling for urban bike rentals achieving 92.8% accuracy. Applied time series analysis, neural networks (MLP, CNN), and clustering techniques.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">Scikit-learn</span>
+                        <span class="tech-tag">Pandas</span>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <h3>Retail Sales Analytics Pipeline</h3>
+                    <span class="project-status status-completed">Completed</span>
+                    <p>Cloud-based ETL pipeline using AWS S3, Glue, and Athena with PySpark for data transformation. Built Tableau dashboards for tracking regional KPIs and revenue optimization.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">PySpark</span>
+                        <span class="tech-tag">Tableau</span>
+                        <span class="tech-tag">SQL</span>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="project-card">
+                    <h3>Spotify Streaming Dashboard</h3>
+                    <span class="project-status status-completed">Completed</span>
+                    <p>Interactive Tableau dashboard analyzing 3,000+ streaming records across multiple platforms. Performed statistical analysis revealing cross-platform engagement patterns.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Tableau</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Pandas</span>
+                    </div>
+                </div>
+                
+                <!-- Project 7 -->
+                <div class="project-card">
+                    <h3>RAG System Comparison</h3>
+                    <span class="project-status status-completed">Completed</span>
+                    <p>Comprehensive analysis comparing FAISS vs ChromaDB vector databases with different embedding models. Implemented LangChain agents for document retrieval.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">LangChain</span>
+                        <span class="tech-tag">FAISS</span>
+                        <span class="tech-tag">ChromaDB</span>
+                    </div>
+                </div>
+                
+                <!-- Project 8 -->
+                <div class="project-card">
+                    <h3>DeepVision</h3>
+                    <span class="project-status status-completed">Completed</span>
+                    <p>Real-time object detection system using YOLOv8 for computer vision applications. Implemented modular pipeline for batch and real-time processing.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">YOLOv8</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">Python</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <h3>Data Analyst & Customer Success Specialist</h3>
+                <p class="company">Phoenix Compliance</p>
+                <p class="date">Remote | Working with U.S.-based teams</p>
+                <ul>
+                    <li>Built interactive Tableau and Power BI dashboards for 800+ healthcare customer records, reducing manual reporting time by 35%</li>
+                    <li>Performed behavioral pattern analysis identifying key engagement metrics that reduced reporting errors by 15%</li>
+                    <li>Automated data workflows using UiPath (RPA) and Excel macros, streamlining monthly reporting processes</li>
+                    <li>Collaborated with cross-functional stakeholders across different time zones to deliver data-driven insights</li>
+                    <li>Used SQL for database queries and data extraction to support compliance reporting</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Education Section -->
+        <section id="education">
+            <h2>Education</h2>
+            
+            <div class="education-item">
+                <h3>Master of Science in Data Analytics Engineering</h3>
+                <p class="school">Northeastern University, Boston, MA</p>
+                <p class="date">Expected Graduation: December 2026</p>
+                <p><strong>Relevant Coursework:</strong> Deep Learning, Applied Generative AI, Neural Networks, Machine Learning, Cloud Computing, Database Management</p>
+            </div>
+            
+            <div class="education-item">
+                <h3>Bachelor of Science in Computer Science</h3>
+                <p class="school">Christ University, Bangalore, India</p>
+                <p class="date">Graduated: 2023</p>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <div class="contact-info">
+                <div class="contact-card">
+                    <h3>Email</h3>
+                    <a href="vasisht.h@northeastern.edu">your.email@northeastern.edu</a>
+                </div>
+                
+                <div class="contact-card">
+                    <h3>LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/harini-vasisht-a4786924b/" target="_blank">linkedin.com/in/harini-vasisht</a>
+                </div>
+                
+                <div class="contact-card">
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/hvasisht" target="_blank">github.com/harini-vasisht</a>
+                </div>
+                
+                <div class="contact-card">
+                    <h3>Location</h3>
+                    <p>Boston, Massachusetts</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Harini Vasisht. All rights reserved.</p>
+        <p>Looking for Spring 2026 Co-op Opportunities in Data Analytics, Data Science, and ML Engineering</p>
+    </footer>
+</body>
+</html>
