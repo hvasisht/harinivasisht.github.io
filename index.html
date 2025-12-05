@@ -1,1299 +1,1329 @@
-body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: #f5f5f5;
-    color: #333333;
-    line-height: 1.6;
-    overflow-x: hidden;
-}<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Harini Prasad Vasisht | Data Analytics Portfolio</title>
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --primary: #6366f1;
-    --secondary: #8b5cf6;
-    --accent: #ec4899;
-    --dark: #1a1a1a;
-    --dark-secondary: #2a2a2a;
-    --dark-tertiary: #3a3a3a;
-    --text-primary: #ffffff;
-    --text-secondary: #b0b0b0;
-    --light-bg: #f5f5f5;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: #000000;
-    color: var(--text-primary);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-/* Navigation */
-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(26, 26, 26, 0.98);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    padding: 1rem 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-nav .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-nav a {
-    color: #666666;
-    text-decoration: none;
-    transition: color 0.3s;
-    font-weight: 500;
-}
-
-nav a:hover {
-    color: var(--primary);
-}
-
-/* Hero Section */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #1a1a1a;
-    position: relative;
-    overflow: hidden;
-    padding: 0 2rem;
-}
-
-.hero-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex-wrap: wrap;
-}
-
-.hero-left {
-    flex: 1;
-    min-width: 400px;
-}
-
-.hero-right {
-    flex: 0 0 400px;
-}
-
-.hero-image {
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(99, 102, 241, 0.3);
-}
-
-.hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.hero-image-placeholder {
-    font-size: 8rem;
-    color: white;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(99, 102, 241, 0.15), transparent);
-    top: -250px;
-    right: -250px;
-    animation: float 20s infinite;
-}
-
-.hero::after {
-    content: '';
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(236, 72, 153, 0.15), transparent);
-    bottom: -200px;
-    left: -200px;
-    animation: float 15s infinite reverse;
-}
-
-@keyframes float {
-    0%, 100% { transform: translate(0, 0) rotate(0deg); }
-    33% { transform: translate(50px, -50px) rotate(120deg); }
-    66% { transform: translate(-50px, 50px) rotate(240deg); }
-}
-
-.hero-content {
-    text-align: left;
-    z-index: 1;
-}
-
-.hero-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    color: #ffffff;
-    animation: fadeInUp 1s ease-out;
-}
-
-.hero-content .subtitle {
-    font-size: 1.3rem;
-    color: #b0b0b0;
-    margin-bottom: 0.5rem;
-    animation: fadeInUp 1s ease-out 0.2s both;
-}
-
-.hero-location {
-    font-size: 1rem;
-    color: #888888;
-    margin-bottom: 2rem;
-    animation: fadeInUp 1s ease-out 0.3s both;
-}
-
-.typing-text {
-    font-size: 1.2rem;
-    color: var(--primary);
-    min-height: 40px;
-    margin-bottom: 2rem;
-    animation: fadeInUp 1s ease-out 0.4s both;
-}
-
-.hero-buttons {
-    margin-top: 2rem;
-    display: flex;
-    gap: 1rem;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    animation: fadeInUp 1s ease-out 0.6s both;
-}
-
-.btn {
-    padding: 0.8rem 2rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s;
-    display: inline-block;
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    color: white;
-    border: none;
-}
-
-.btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4);
-}
-
-.btn-secondary {
-    background: transparent;
-    color: var(--primary);
-    border: 2px solid var(--primary);
-}
-
-.btn-secondary:hover {
-    background: var(--primary);
-    color: white;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Section Styles */
-section {
-    padding: 5rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    text-align: center;
-    position: relative;
-    color: #333333;
-}
-
-section h2::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 4px;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    border-radius: 2px;
-}
-
-/* About Section */
-.about-content {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.about-text h3 {
-    color: var(--primary);
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-}
-
-.about-text p {
-    color: #666666;
-    margin-bottom: 1rem;
-    line-height: 1.8;
-}
-
-.about-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.stat-card {
-    background: #ffffff;
-    padding: 1.5rem;
-    border-radius: 12px;
-    text-align: center;
-    border: 1px solid #e0e0e0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.stat-number {
-    font-size: 2rem;
-    font-weight: bold;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.stat-label {
-    color: #666666;
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-}
-
-/* Skills Section */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.skill-category {
-    background: #ffffff;
-    padding: 2rem;
-    border-radius: 16px;
-    border: 1px solid #e0e0e0;
-    transition: transform 0.3s;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.skill-category:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary);
-}
-
-.skill-category h3 {
-    color: var(--primary);
-    margin-bottom: 1.5rem;
-    font-size: 1.3rem;
-}
-
-.skill-item {
-    margin-bottom: 1.5rem;
-}
-
-.skill-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.5rem;
-}
-
-.skill-name {
-    color: #333333;
-    font-weight: 500;
-}
-
-.skill-level {
-    color: var(--primary);
-    font-size: 0.9rem;
-}
-
-.skill-bar {
-    height: 8px;
-    background: #e0e0e0;
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.skill-progress {
-    height: 100%;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    border-radius: 4px;
-    transition: width 1s ease-out;
-}
-
-/* Projects Section */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-}
-
-.project-card {
-    background: #ffffff;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid #e0e0e0;
-    transition: all 0.3s;
-    position: relative;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
-    border-color: var(--primary);
-}
-
-.project-header {
-    padding: 2rem;
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1));
-}
-
-.project-card h3 {
-    color: #333333;
-    margin-bottom: 0.5rem;
-    font-size: 1.3rem;
-}
-
-.project-status {
-    display: inline-block;
-    padding: 0.3rem 1rem;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-
-.status-current {
-    background: rgba(236, 72, 153, 0.2);
-    color: #ec4899;
-    border: 1px solid #ec4899;
-}
-
-.status-completed {
-    background: rgba(34, 197, 94, 0.2);
-    color: #22c55e;
-    border: 1px solid #22c55e;
-}
-
-.status-award {
-    background: rgba(251, 191, 36, 0.2);
-    color: #fbbf24;
-    border: 1px solid #fbbf24;
-}
-
-.project-body {
-    padding: 2rem;
-}
-
-.project-description {
-    color: #666666;
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-}
-
-.tech-stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.tech-tag {
-    padding: 0.4rem 1rem;
-    background: rgba(99, 102, 241, 0.1);
-    color: var(--primary);
-    border-radius: 20px;
-    font-size: 0.85rem;
-    border: 1px solid rgba(99, 102, 241, 0.3);
-}
-
-.project-links {
-    display: none;
-}
-
-/* Experience Section with Split Layout */
-.experience-container {
-    display: grid;
-    grid-template-columns: 1fr 2px 1fr;
-    gap: 3rem;
-    position: relative;
-}
-
-.experience-divider {
-    background: linear-gradient(180deg, transparent, var(--primary), var(--accent), transparent);
-    position: relative;
-}
-
-.experience-left,
-.experience-right {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.experience-section-title {
-    font-size: 1.5rem;
-    color: var(--primary);
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-/* Flip Card Styles */
-.flip-card {
-    background: transparent;
-    perspective: 1000px;
-    height: 400px;
-    cursor: pointer;
-}
-
-.flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: left;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-}
-
-.flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-}
-
-.flip-card-front,
-.flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 16px;
-    padding: 2rem;
-    background: #ffffff;
-    border: 1px solid #e0e0e0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.flip-card-front {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.flip-card-back {
-    transform: rotateY(180deg);
-    overflow-y: auto;
-}
-
-.flip-card-front h3 {
-    color: var(--primary);
-    margin-bottom: 0.5rem;
-    font-size: 1.3rem;
-}
-
-.flip-card-front .company {
-    color: #333333;
-    font-weight: 600;
-    margin-bottom: 0.3rem;
-}
-
-.flip-card-front .date {
-    color: #666666;
-    font-size: 0.9rem;
-}
-
-.flip-hint {
-    text-align: center;
-    margin-top: 1rem;
-    color: #999999;
-    font-size: 0.85rem;
-    font-style: italic;
-}
-
-.flip-card-back h3 {
-    color: var(--primary);
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-}
-
-.flip-card-back ul {
-    list-style: none;
-    color: #666666;
-    line-height: 1.8;
-}
-
-.flip-card-back li {
-    margin-bottom: 0.8rem;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-.flip-card-back li::before {
-    content: '▹';
-    position: absolute;
-    left: 0;
-    color: var(--primary);
-    font-weight: bold;
-}
-
-/* Old Timeline Styles - Remove */
-.timeline {
-    display: none;
-}
-
-/* Contact Section */
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.contact-card {
-    background: #ffffff;
-    padding: 2rem;
-    border-radius: 16px;
-    text-align: center;
-    border: 1px solid #e0e0e0;
-    transition: all 0.3s;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.contact-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary);
-}
-
-.contact-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.contact-card h3 {
-    color: var(--primary);
-    margin-bottom: 0.5rem;
-}
-
-.contact-card a {
-    color: #666666;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.contact-card a:hover {
-    color: var(--primary);
-}
-
-/* Footer */
-footer {
-    background: #ffffff;
-    padding: 2rem;
-    text-align: center;
-    border-top: 1px solid #e0e0e0;
-    margin-top: 5rem;
-}
-
-footer p {
-    color: #666666;
-    margin-bottom: 0.5rem;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .hero-container {
-        flex-direction: column-reverse;
-        gap: 3rem;
-    }
-    
-    .hero-left {
-        min-width: 100%;
-        text-align: center;
-    }
-    
-    .hero-right {
-        flex: 0 0 300px;
-    }
-    
-    .hero-image {
-        width: 300px;
-        height: 300px;
-    }
-    
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-    
-    .hero-content .subtitle {
-        font-size: 1.2rem;
-    }
-    
-    .hero-buttons {
-        justify-content: center;
-    }
-    
-    .about-content {
-        max-width: 100%;
-    }
-    
-    .about-stats {
-        grid-template-columns: 1fr;
-    }
-    
-    nav ul {
-        gap: 1rem;
-        font-size: 0.9rem;
-    }
-    
-    .projects-grid,
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .experience-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .experience-divider {
-        display: none;
-    }
-    
-    section {
-        padding: 3rem 1rem;
-    }
-}
-
-/* Scroll animations */
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harini Vasisht | Data Analytics Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --accent: #ec4899;
+            --dark: #1a1a1a;
+            --dark-secondary: #2a2a2a;
+            --dark-tertiary: #3a3a3a;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --light-bg: #f5f5f5;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f5f5f5;
+            color: #333333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: #b0b0b0;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #1a1a1a;
+            position: relative;
+            overflow: hidden;
+            padding: 0 2rem;
+        }
+        
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+        
+        .hero-left {
+            flex: 1;
+            min-width: 400px;
+        }
+        
+        .hero-right {
+            flex: 0 0 400px;
+        }
+        
+        .hero-image {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(99, 102, 241, 0.3);
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-image-placeholder {
+            font-size: 8rem;
+            color: white;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.15), transparent);
+            top: -250px;
+            right: -250px;
+            animation: float 20s infinite;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.15), transparent);
+            bottom: -200px;
+            left: -200px;
+            animation: float 15s infinite reverse;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(50px, -50px) rotate(120deg); }
+            66% { transform: translate(-50px, 50px) rotate(240deg); }
+        }
+        
+        .hero-content {
+            text-align: left;
+            z-index: 1;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero-content .subtitle {
+            font-size: 1.3rem;
+            color: #b0b0b0;
+            margin-bottom: 0.5rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+        
+        .typing-text {
+            font-size: 1.2rem;
+            color: var(--primary);
+            min-height: 40px;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+        
+        .hero-buttons {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+        
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            color: #333333;
+        }
+        
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+        
+        /* About Section */
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .about-text h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .about-text p {
+            color: #666666;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-card {
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .stat-label {
+            color: #666666;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-category {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid #e0e0e0;
+            transition: transform 0.3s;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+        
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .skill-name {
+            color: #333333;
+            font-weight: 500;
+        }
+        
+        .skill-level {
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+        
+        .skill-bar {
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 4px;
+            transition: width 1s ease-out;
+        }
+        
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+            border-color: var(--primary);
+        }
+        
+        .project-header {
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1));
+        }
+        
+        .project-card h3 {
+            color: #333333;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .project-status {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .status-current {
+            background: rgba(236, 72, 153, 0.2);
+            color: #ec4899;
+            border: 1px solid #ec4899;
+        }
+        
+        .status-completed {
+            background: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+            border: 1px solid #22c55e;
+        }
+        
+        .project-body {
+            padding: 2rem;
+        }
+        
+        .project-description {
+            color: #666666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tech-tag {
+            padding: 0.4rem 1rem;
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+        }
+        
+        /* Experience Section */
+        .experience-container {
+            display: grid;
+            grid-template-columns: 1fr 2px 1fr;
+            gap: 3rem;
+            position: relative;
+        }
+        
+        .experience-divider {
+            background: linear-gradient(180deg, transparent, var(--primary), var(--accent), transparent);
+            position: relative;
+        }
+        
+        .experience-left,
+        .experience-right {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .experience-section-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        /* Flip Card Styles */
+        .flip-card {
+            background: transparent;
+            perspective: 1000px;
+            height: 400px;
+            cursor: pointer;
+        }
+        
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: left;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 16px;
+            padding: 2rem;
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .flip-card-front {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .flip-card-back {
+            transform: rotateY(180deg);
+            overflow-y: auto;
+        }
+        
+        .flip-card-front h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .flip-card-front .company {
+            color: #333333;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+        
+        .flip-card-front .date {
+            color: #666666;
+            font-size: 0.9rem;
+        }
+        
+        .flip-hint {
+            text-align: center;
+            margin-top: 1rem;
+            color: #999999;
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+        
+        .flip-card-back h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .flip-card-back ul {
+            list-style: none;
+            color: #666666;
+            line-height: 1.8;
+        }
+        
+        .flip-card-back li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .flip-card-back li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .contact-card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+        
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-card a {
+            color: #666666;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-card a:hover {
+            color: var(--primary);
+        }
+        
+        /* Footer */
+        footer {
+            background: #ffffff;
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 5rem;
+        }
+        
+        footer p {
+            color: #666666;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-container {
+                flex-direction: column-reverse;
+                gap: 3rem;
+            }
+            
+            .hero-left {
+                min-width: 100%;
+                text-align: center;
+            }
+            
+            .hero-right {
+                flex: 0 0 300px;
+            }
+            
+            .hero-image {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .about-content {
+                max-width: 100%;
+            }
+            
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .projects-grid,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .experience-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .experience-divider {
+                display: none;
+            }
+            
+            section {
+                padding: 3rem 1rem;
+            }
+        }
+        
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
-<!-- Navigation -->
-<nav>
-<div class="container">
-    <div class="logo">HV</div>
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</div>
-</nav>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">HV</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<!-- Hero Section -->
-<section class="hero" id="home">
-<div class="hero-container">
-    <div class="hero-left">
-        <div class="hero-content">
-            <h1>Harini Prasad Vasisht</h1>
-            <p class="subtitle">Data Analytics Engineering Graduate Student</p>
-            <div class="typing-text" id="typing"></div>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-left">
+                <div class="hero-content">
+                    <h1>Harini Vasisht</h1>
+                    <p class="subtitle">Data Analytics Engineering Graduate Student</p>
+                    <div class="typing-text" id="typing"></div>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-image">
+                    <img src="./profile.png" alt="Harini Vasisht" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <div class="hero-image-placeholder" style="display: none;">👩‍💻</div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="hero-right">
-        <div class="hero-image">
-            <img src="./profile.png" alt="Harini Vasisht" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-            <div class="hero-image-placeholder" style="display: none;">👩‍💻</div>
-        </div>
-    </div>
-</div>
-</section>
+    </section>
 
-<!-- About Section -->
-<section id="about" class="fade-in">
-<h2>About Me</h2>
-<div class="about-content">
-    <div class="about-text">
-        <h3>Passionate About Turning Data Into Insights</h3>
-        <p>I'm a Data Analytics Engineering graduate student at Northeastern University with a strong foundation in machine learning, deep learning, and data analytics. My experience spans from building production-ready ML systems to creating insightful dashboards that drive business decisions.</p>
+    <!-- About Section -->
+    <section id="about" class="fade-in">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Passionate About Turning Data Into Insights</h3>
+                <p>I'm a Data Analytics Engineering graduate student at Northeastern University with a strong foundation in machine learning, deep learning, and data analytics. My experience spans from building production-ready ML systems to creating insightful dashboards that drive business decisions.</p>
+                
+                <p>With over 1 year of professional experience including roles as a Data Analyst at Phoenix Compliance and HR Coordinator at AjjanaMane, I've successfully delivered automated dashboards, optimized workflows, and collaborated with cross-functional teams. I'm actively seeking Spring 2026 co-op opportunities where I can apply my skills in Python, SQL, machine learning frameworks, and cloud technologies.</p>
+                
+                <p>I thrive on solving complex problems with data-driven solutions and am particularly interested in roles involving predictive modeling, computer vision, and natural language processing.</p>
+                
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">13+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">3.6</div>
+                        <div class="stat-label">GPA</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">2026</div>
+                        <div class="stat-label">Expected Graduation</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="fade-in">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Programming & Data</h3>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Python</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">SQL</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">R</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 65%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Machine Learning & AI</h3>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">PyTorch</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">TensorFlow</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 70%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Scikit-learn</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 78%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">LangChain</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 72%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Data Visualization</h3>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Tableau</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Power BI</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Matplotlib/Seaborn</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Cloud & Tools</h3>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">AWS</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Git/GitHub</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 78%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Docker</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 65%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="fade-in">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Personal Health AI Assistant</h3>
+                    <span class="project-status status-completed">Completed</span>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">Multi-agent health tracking system with specialized agents for diabetes, nutrition, and fitness. Built with ChromaDB RAG for medical knowledge (ADA 2024 guidelines), SQLite for data persistence, and Streamlit interface with interactive visualizations and pattern analysis.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">LangChain</span>
+                        <span class="tech-tag">ChromaDB</span>
+                        <span class="tech-tag">GPT-4</span>
+                        <span class="tech-tag">Streamlit</span>
+                        <span class="tech-tag">SQLite</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Text-to-Image Generation Pipeline</h3>
+                    <span class="project-status status-completed">Completed</span>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">Complete text-to-image pipeline using CLIP and Stable Diffusion v1.5 with COCO 2017 dataset. Achieved IS: 5.08, CLIP similarity: 31.85 through systematic parameter optimization. Deployed interactive Streamlit app with style presets and quality scoring.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">CLIP</span>
+                        <span class="tech-tag">Stable Diffusion</span>
+                        <span class="tech-tag">Streamlit</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>CNN-Based Automated Attendance System</h3>
+                    <span class="project-status status-completed">Completed</span>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">End-to-end facial recognition system using ResNet-18/50 and YOLOv8 achieving 91% accuracy on 202,599 CelebA images. Deployed Flask web app with two-pass detection, custom NMS algorithms (95% duplicate reduction), and 99% detection confidence.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">YOLOv8</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">OpenCV</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 4 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>RebalanceAI</h3>
+                    <span class="project-status status-completed">Completed</span>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">Hybrid stock analysis system with multi-source sentiment analysis using LangChain and GPT-4. Integrated yfinance, Alpha Vantage, NewsAPI, and Reddit data with 3-layer fallback system for 95% reliability.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">LangChain</span>
+                        <span class="tech-tag">GPT-4</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">APIs</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 5 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>BikeDemandML</h3>
+                    <span class="project-status status-completed">Completed</span>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">Predictive modeling for urban bike rentals achieving 92.8% accuracy using neural networks (MLP, CNN). Applied time series analysis and clustering techniques for demand forecasting across 17,000+ records.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">Scikit-learn</span>
+                        <span class="tech-tag">Pandas</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 6 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Retail Sales Analytics Pipeline</h3>
+                    <span class="project-status status-completed">Completed</span>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">Cloud-based ETL pipeline using AWS S3, Glue, and Athena with PySpark for data transformation. Built Tableau dashboards tracking regional KPIs and revenue optimization with 60% reduction in manual reporting.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">PySpark</span>
+                        <span class="tech-tag">Tableau</span>
+                        <span class="tech-tag">SQL</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 7 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Spotify Streaming Dashboard</h3>
+                    <span class="project-status status-completed">Completed</span>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">Interactive Tableau dashboard analyzing 3,000+ streaming records across Spotify, TikTok, and YouTube. Performed statistical analysis revealing 30% higher engagement for tracks with TikTok presence.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Tableau</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Pandas</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 8 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>RAG System Comparison</h3>
+                    <span class="project-status status-completed">Completed</span>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">Comprehensive analysis comparing FAISS vs ChromaDB vector databases with different embedding models. Implemented LangChain agents for document retrieval and tested chunking strategies.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">LangChain</span>
+                        <span class="tech-tag">FAISS</span>
+                        <span class="tech-tag">ChromaDB</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 9 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>DeepVision Object Detection</h3>
+                    <span class="project-status status-completed">Completed</span>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">Real-time object detection system using YOLOv8 for computer vision applications. Implemented modular pipeline supporting batch and real-time processing with optimized inference.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">YOLOv8</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">Python</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 10 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>TaskFlow Database System</h3>
+                    <span class="project-status status-current">Ongoing</span>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">Task management system with MySQL/MongoDB backend. Designed normalized schema tracking 500+ tasks with automated reporting, reducing sprint planning time by 25%.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Python</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 11 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>GenAI Summarizer</h3>
+                    <span class="project-status status-completed">Completed</span>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">NLP-based text summarization system using Hugging Face Transformers. Automated document summarization with fine-tuned language models for various text formats.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Transformers</span>
+                        <span class="tech-tag">Hugging Face</span>
+                        <span class="tech-tag">Python</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="fade-in">
+        <h2>Professional Experience & Education</h2>
+        <div class="experience-container">
+            <!-- Left Side - Work Experience -->
+            <div class="experience-left">
+                <h3 class="experience-section-title">Work Experience</h3>
+                
+                <!-- Phoenix Compliance Card -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>Data Analyst & Customer Success Specialist</h3>
+                            <p class="company">Phoenix Compliance</p>
+                            <p class="date">Remote | Working with U.S.-based teams</p>
+                            <p class="flip-hint">Hover to see details</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Key Responsibilities</h3>
+                            <ul>
+                                <li>Built interactive Tableau and Power BI dashboards for 800+ healthcare customer records, reducing manual reporting time by 35%</li>
+                                <li>Performed behavioral pattern analysis identifying key engagement metrics that reduced reporting errors by 15%</li>
+                                <li>Automated data workflows using UiPath (RPA) and Excel macros, streamlining monthly reporting processes</li>
+                                <li>Collaborated with cross-functional stakeholders across different time zones to deliver data-driven insights</li>
+                                <li>Used SQL for database queries and data extraction to support compliance reporting</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- AjjanaMane Card -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>Human Resources Coordinator</h3>
+                            <p class="company">AjjanaMane · Part-time</p>
+                            <p class="date">Karnataka, India | June 2019 - June 2022 (3 years 1 month)</p>
+                            <p class="flip-hint">Hover to see details</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Key Achievements</h3>
+                            <ul>
+                                <li>Optimized staff allocation and service efficiency by analyzing workforce data, improving operational workflows</li>
+                                <li>Developed data-driven reports to enhance employee performance tracking and decision-making</li>
+                                <li>Built ERP dashboards to visualize spending and budgets, improving financial transparency and planning</li>
+                                <li>Assigned staff roles aligned with individual skills and interests, fostering job satisfaction and engagement</li>
+                                <li>Promoted open communication by addressing staff concerns and creating a culture of feedback</li>
+                                <li>Cultivated a positive workplace environment, improving staff morale and team performance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Divider Line -->
+            <div class="experience-divider"></div>
+            
+            <!-- Right Side - Education -->
+            <div class="experience-right">
+                <h3 class="experience-section-title">Education</h3>
+                
+                <!-- Northeastern Card -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>Master of Science in Data Analytics Engineering</h3>
+                            <p class="company">Northeastern University, Boston, MA</p>
+                            <p class="date">Expected Graduation: December 2026 | GPA: 3.6</p>
+                            <p class="flip-hint">Hover to see details</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Academic Focus</h3>
+                            <ul>
+                                <li><strong>Relevant Coursework:</strong> Deep Learning (IE 7615), Applied Generative AI (IE 5374), Neural Networks, Machine Learning, Cloud Computing, Database Management</li>
+                                <li>Actively seeking Spring 2026 co-op opportunities in data analytics, data science, and ML engineering</li>
+                                <li>Completed 13+ hands-on projects in ML, deep learning, and data analytics</li>
+                                <li>Strong focus on practical applications of AI/ML with deployed systems</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Christ University Card -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>Bachelor of Science in Computer Applications</h3>
+                            <p class="company">Christ University, Bangalore, India</p>
+                            <p class="date">Graduated: 2023</p>
+                            <p class="flip-hint">Hover to see details</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Foundation</h3>
+                            <ul>
+                                <li>Strong foundation in computer science fundamentals and programming</li>
+                                <li>Developed skills in data structures, algorithms, and software development</li>
+                                <li>Completed coursework in databases, web development, and system design</li>
+                                <li>Built academic projects applying CS and data analytics concepts</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="fade-in">
+        <h2>Get In Touch</h2>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">📧</div>
+                <h3>Email</h3>
+                <a href="mailto:vasisht.h@northeastern.edu">vasisht.h@northeastern.edu</a>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-icon">💼</div>
+                <h3>LinkedIn</h3>
+                <a href="https://www.linkedin.com/in/harini-vasisht" target="_blank">linkedin.com/in/harini-vasisht</a>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-icon">💻</div>
+                <h3>GitHub</h3>
+                <a href="https://github.com/hvasisht" target="_blank">github.com/hvasisht</a>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-icon">📍</div>
+                <h3>Location</h3>
+                <p>Boston, MA</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Harini Vasisht. All rights reserved.</p>
+        <p>Looking for Spring 2026 Co-op Opportunities in Data Analytics & ML Engineering</p>
+    </footer>
+
+    <script>
+        // Typing animation
+        const texts = [
+            "Data Scientist",
+            "Machine Learning Engineer",
+            "Data Analyst",
+            "Deep Learning Enthusiast"
+        ];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.getElementById('typing');
         
-        <p>With over 1 year of professional experience including roles as a Data Analyst at Phoenix Compliance and HR Coordinator at AjjanaMane, I've successfully delivered automated dashboards, optimized workflows, and collaborated with cross-functional teams. I'm actively seeking Spring 2026 co-op opportunities where I can apply my skills in Python, SQL, machine learning frameworks, and cloud technologies.</p>
-        
-        <p>I thrive on solving complex problems with data-driven solutions and am particularly interested in roles involving predictive modeling, computer vision, and natural language processing.</p>
-        
-        <div class="about-stats">
-            <div class="stat-card">
-                <div class="stat-number">10+</div>
-                <div class="stat-label">Projects Completed</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">3.6</div>
-                <div class="stat-label">GPA</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">2026</div>
-                <div class="stat-label">Expected Graduation</div>
-            </div>
-        </div>
-    </div>
-</div>
-</section>
-
-<!-- Skills Section -->
-<section id="skills" class="fade-in">
-<h2>Technical Skills</h2>
-<div class="skills-grid">
-    <div class="skill-category">
-        <h3>Programming & Data</h3>
-        <div class="skill-item">
-            <div class="skill-header">
-                <span class="skill-name">Python</span>
-                <span class="skill-level">Intermediate</span>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-progress" style="width: 75%"></div>
-            </div>
-        </div>
-        <div class="skill-item">
-            <div class="skill-header">
-                <span class="skill-name">SQL</span>
-                <span class="skill-level">Advanced</span>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-progress" style="width: 90%"></div>
-            </div>
-        </div>
-        <div class="skill-item">
-            <div class="skill-header">
-                <span class="skill-name">R</span>
-                <span class="skill-level">Intermediate</span>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-progress" style="width: 65%"></div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="skill-category">
-        <h3>Machine Learning & AI</h3>
-        <div class="skill-item">
-            <div class="skill-header">
-                <span class="skill-name">PyTorch</span>
-                <span class="skill-level">Intermediate</span>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-progress" style="width: 75%"></div>
-            </div>
-        </div>
-        <div class="skill-item">
-            <div class="skill-header">
-                <span class="skill-name">TensorFlow</span>
-                <span class="skill-level">Intermediate</span>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-progress" style="width: 70%"></div>
-            </div>
-        </div>
-        <div class="skill-item">
-            <div class="skill-header">
-                <span class="skill-name">Scikit-learn</span>
-                <span class="skill-level">Intermediate</span>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-progress" style="width: 78%"></div>
-            </div>
-        </div>
-        <div class="skill-item">
-            <div class="skill-header">
-                <span class="skill-name">LangChain</span>
-                <span class="skill-level">Intermediate</span>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-progress" style="width: 72%"></div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="skill-category">
-        <h3>Data Visualization</h3>
-        <div class="skill-item">
-            <div class="skill-header">
-                <span class="skill-name">Tableau</span>
-                <span class="skill-level">Advanced</span>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-progress" style="width: 90%"></div>
-            </div>
-        </div>
-        <div class="skill-item">
-            <div class="skill-header">
-                <span class="skill-name">Power BI</span>
-                <span class="skill-level">Advanced</span>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-progress" style="width: 85%"></div>
-            </div>
-        </div>
-        <div class="skill-item">
-            <div class="skill-header">
-                <span class="skill-name">Matplotlib/Seaborn</span>
-                <span class="skill-level">Intermediate</span>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-progress" style="width: 75%"></div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="skill-category">
-        <h3>Cloud & Tools</h3>
-        <div class="skill-item">
-            <div class="skill-header">
-                <span class="skill-name">AWS</span>
-                <span class="skill-level">Intermediate</span>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-progress" style="width: 75%"></div>
-            </div>
-        </div>
-        <div class="skill-item">
-            <div class="skill-header">
-                <span class="skill-name">Git/GitHub</span>
-                <span class="skill-level">Intermediate</span>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-progress" style="width: 78%"></div>
-            </div>
-        </div>
-        <div class="skill-item">
-            <div class="skill-header">
-                <span class="skill-name">Docker</span>
-                <span class="skill-level">Intermediate</span>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-progress" style="width: 65%"></div>
-            </div>
-        </div>
-    </div>
-</div>
-</section>
-
-<!-- Projects Section -->
-<section id="projects" class="fade-in">
-<h2>Featured Projects</h2>
-<div class="projects-grid">
-    <!-- Project 1 -->
-    <div class="project-card">
-        <div class="project-header">
-            <h3>Text-to-Image Generation</h3>
-            <span class="project-status status-current">Current</span>
-        </div>
-        <div class="project-body">
-            <p class="project-description">Building a text-to-image generation pipeline using CLIP and Stable Diffusion v1.5 with the COCO 2017 dataset. Achieved 83.24% CLIP similarity score in Milestone 1.</p>
-            <div class="tech-stack">
-                <span class="tech-tag">PyTorch</span>
-                <span class="tech-tag">CLIP</span>
-                <span class="tech-tag">Stable Diffusion</span>
-                <span class="tech-tag">Transformers</span>
-            </div>
-            <div class="project-links">
-                <a href="#" class="project-link link-primary">View Project</a>
-                <a href="https://github.com/hvasisht" class="project-link link-secondary">GitHub</a>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Project 2 -->
-    <div class="project-card">
-        <div class="project-header">
-            <h3>Celebrity Detection System</h3>
-            <span class="project-status status-completed">Completed</span>
-        </div>
-        <div class="project-body">
-            <p class="project-description">CNN-based automated attendance system using ResNet and YOLOv8 achieving 91% accuracy on 202,599 CelebA images. Deployed Flask web application with custom NMS algorithms.</p>
-            <div class="tech-stack">
-                <span class="tech-tag">PyTorch</span>
-                <span class="tech-tag">YOLOv8</span>
-                <span class="tech-tag">Flask</span>
-                <span class="tech-tag">OpenCV</span>
-            </div>
-            <div class="project-links">
-                <a href="#" class="project-link link-primary">View Project</a>
-                <a href="https://github.com/hvasisht" class="project-link link-secondary">GitHub</a>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Project 3 -->
-    <div class="project-card">
-        <div class="project-header">
-            <h3>RebalanceAI</h3>
-            <span class="project-status status-completed">Completed</span>
-        </div>
-        <div class="project-body">
-            <p class="project-description">Hybrid stock analysis system integrating financial data with sentiment analysis using LangChain and GPT-4. Combined yfinance, Alpha Vantage, NewsAPI, and Reddit data.</p>
-            <div class="tech-stack">
-                <span class="tech-tag">LangChain</span>
-                <span class="tech-tag">GPT-4</span>
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">APIs</span>
-            </div>
-            <div class="project-links">
-                <a href="#" class="project-link link-primary">View Project</a>
-                <a href="https://github.com/hvasisht" class="project-link link-secondary">GitHub</a>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Project 4 -->
-    <div class="project-card">
-        <div class="project-header">
-            <h3>BikeDemandML</h3>
-            <span class="project-status status-completed">Completed</span>
-        </div>
-        <div class="project-body">
-            <p class="project-description">Predictive modeling for urban bike rentals achieving 92.8% accuracy. Applied time series analysis, neural networks, and clustering techniques for demand forecasting.</p>
-            <div class="tech-stack">
-                <span class="tech-tag">PyTorch</span>
-                <span class="tech-tag">Scikit-learn</span>
-                <span class="tech-tag">Pandas</span>
-            </div>
-            <div class="project-links">
-                <a href="#" class="project-link link-primary">View Project</a>
-                <a href="https://github.com/hvasisht" class="project-link link-secondary">GitHub</a>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Project 5 -->
-    <div class="project-card">
-        <div class="project-header">
-            <h3>Retail Sales Analytics</h3>
-            <span class="project-status status-completed">Completed</span>
-        </div>
-        <div class="project-body">
-            <p class="project-description">Cloud-based ETL pipeline using AWS S3, Glue, and Athena with PySpark. Built Tableau dashboards for tracking regional KPIs and revenue optimization.</p>
-            <div class="tech-stack">
-                <span class="tech-tag">AWS</span>
-                <span class="tech-tag">PySpark</span>
-                <span class="tech-tag">Tableau</span>
-                <span class="tech-tag">SQL</span>
-            </div>
-            <div class="project-links">
-                <a href="#" class="project-link link-primary">View Project</a>
-                <a href="https://github.com/hvasisht" class="project-link link-secondary">GitHub</a>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Project 6 -->
-    <div class="project-card">
-        <div class="project-header">
-            <h3>Spotify Dashboard</h3>
-            <span class="project-status status-completed">Completed</span>
-        </div>
-        <div class="project-body">
-            <p class="project-description">Interactive Tableau dashboard analyzing 3,000+ streaming records across multiple platforms. Performed statistical analysis revealing cross-platform engagement patterns.</p>
-            <div class="tech-stack">
-                <span class="tech-tag">Tableau</span>
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Pandas</span>
-            </div>
-            <div class="project-links">
-                <a href="#" class="project-link link-primary">View Project</a>
-                <a href="https://github.com/hvasisht" class="project-link link-secondary">GitHub</a>
-            </div>
-        </div>
-    </div>
-</div>
-</section>
-
-<!-- Experience Section -->
-<section id="experience" class="fade-in">
-<h2>Professional Experience & Education</h2>
-<div class="experience-container">
-    <!-- Left Side - Work Experience -->
-    <div class="experience-left">
-        <h3 class="experience-section-title">Work Experience</h3>
-        
-        <!-- Phoenix Compliance Card -->
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <h3>Data Analyst & Customer Success Specialist</h3>
-                    <p class="company">Phoenix Compliance</p>
-                    <p class="date">Remote | Working with U.S.-based teams</p>
-                    <p class="flip-hint">Hover to see details</p>
-                </div>
-                <div class="flip-card-back">
-                    <h3>Key Responsibilities</h3>
-                    <ul>
-                        <li>Built interactive Tableau and Power BI dashboards for 800+ healthcare customer records, reducing manual reporting time by 35%</li>
-                        <li>Performed behavioral pattern analysis identifying key engagement metrics that reduced reporting errors by 15%</li>
-                        <li>Automated data workflows using UiPath (RPA) and Excel macros, streamlining monthly reporting processes</li>
-                        <li>Collaborated with cross-functional stakeholders across different time zones to deliver data-driven insights</li>
-                        <li>Used SQL for database queries and data extraction to support compliance reporting</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        <!-- AjjanaMane Card -->
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <h3>Human Resources Coordinator</h3>
-                    <p class="company">AjjanaMane · Part-time</p>
-                    <p class="date">Karnataka, India | June 2019 - June 2022 (3 years 1 month)</p>
-                    <p class="flip-hint">Hover to see details</p>
-                </div>
-                <div class="flip-card-back">
-                    <h3>Key Achievements</h3>
-                    <ul>
-                        <li>Optimized staff allocation and service efficiency by analyzing workforce data, improving operational workflows</li>
-                        <li>Developed data-driven reports to enhance employee performance tracking and decision-making</li>
-                        <li>Built ERP dashboards to visualize spending and budgets, improving financial transparency and planning</li>
-                        <li>Assigned staff roles aligned with individual skills and interests, fostering job satisfaction and engagement</li>
-                        <li>Promoted open communication by addressing staff concerns and creating a culture of feedback</li>
-                        <li>Cultivated a positive workplace environment, improving staff morale and team performance</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Divider Line -->
-    <div class="experience-divider"></div>
-    
-    <!-- Right Side - Education -->
-    <div class="experience-right">
-        <h3 class="experience-section-title">Education</h3>
-        
-        <!-- Northeastern Card -->
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <h3>Master of Science in Data Analytics Engineering</h3>
-                    <p class="company">Northeastern University, Boston, MA</p>
-                    <p class="date">Expected Graduation: December 2026 | GPA: 3.6</p>
-                    <p class="flip-hint">Hover to see details</p>
-                </div>
-                <div class="flip-card-back">
-                    <h3>Academic Focus</h3>
-                    <ul>
-                        <li><strong>Relevant Coursework:</strong> Deep Learning, Applied Generative AI, Neural Networks, Machine Learning, Cloud Computing, Database Management</li>
-                        <li>Actively seeking Spring 2026 co-op opportunities in data analytics, data science, and ML engineering</li>
-                        <li>Completed 10+ hands-on projects in ML, deep learning, and data analytics</li>
-                        <li>Strong focus on practical applications of AI/ML in business contexts</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Christ University Card -->
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <h3>Bachelor of Science in Computer Science</h3>
-                    <p class="company">Christ University, Bangalore, India</p>
-                    <p class="date">Graduated: 2023</p>
-                    <p class="flip-hint">Hover to see details</p>
-                </div>
-                <div class="flip-card-back">
-                    <h3>Foundation</h3>
-                    <ul>
-                        <li>Strong foundation in computer science fundamentals</li>
-                        <li>Developed skills in programming, data structures, and algorithms</li>
-                        <li>Completed coursework in databases, software engineering, and web development</li>
-                        <li>Built multiple academic projects applying CS concepts</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="fade-in">
-<h2>Get In Touch</h2>
-<div class="contact-grid">
-    <div class="contact-card">
-        <div class="contact-icon">📧</div>
-        <h3>Email</h3>
-        <a href="mailto:vasisht.h@northeastern.edu">vasisht.h@northeastern.edu</a>
-    </div>
-    
-    <div class="contact-card">
-        <div class="contact-icon">💼</div>
-        <h3>LinkedIn</h3>
-        <a href="https://www.linkedin.com/in/harini-vasisht" target="_blank">linkedin.com/in/harini-vasisht</a>
-    </div>
-    
-    <div class="contact-card">
-        <div class="contact-icon">💻</div>
-        <h3>GitHub</h3>
-        <a href="https://github.com/hvasisht" target="_blank">github.com/hvasisht</a>
-    </div>
-    
-    <div class="contact-card">
-        <div class="contact-icon">📍</div>
-        <h3>Location</h3>
-        <p>Boston, MA</p>
-    </div>
-</div>
-</section>
-
-<!-- Footer -->
-<footer>
-<p>&copy; 2025 Harini Vasisht. All rights reserved.</p>
-<p>Looking for Spring 2026 Co-op Opportunities</p>
-</footer>
-
-<script>
-// Typing animation
-const texts = [
-    "Data Scientist",
-    "Machine Learning Engineer",
-    "Data Analyst",
-    "Deep Learning Enthusiast"
-];
-let textIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-const typingElement = document.getElementById('typing');
-
-function type() {
-    const currentText = texts[textIndex];
-    
-    if (isDeleting) {
-        typingElement.textContent = currentText.substring(0, charIndex - 1);
-        charIndex--;
-    } else {
-        typingElement.textContent = currentText.substring(0, charIndex + 1);
-        charIndex++;
-    }
-    
-    if (!isDeleting && charIndex === currentText.length) {
-        setTimeout(() => isDeleting = true, 2000);
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        textIndex = (textIndex + 1) % texts.length;
-    }
-    
-    const typingSpeed = isDeleting ? 50 : 100;
-    setTimeout(type, typingSpeed);
-}
-
-type();
-
-// Scroll animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+        function type() {
+            const currentText = texts[textIndex];
+            
+            if (isDeleting) {
+                typingElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            
+            if (!isDeleting && charIndex === currentText.length) {
+                setTimeout(() => isDeleting = true, 2000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+            }
+            
+            const typingSpeed = isDeleting ? 50 : 100;
+            setTimeout(type, typingSpeed);
         }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.fade-in').forEach(el => {
-    observer.observe(el);
-});
-
-// Smooth scroll for navigation
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+        
+        type();
+        
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
             });
-        }
-    });
-});
-</script>
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
